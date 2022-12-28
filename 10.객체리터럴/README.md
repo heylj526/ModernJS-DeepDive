@@ -6,10 +6,10 @@
 ```
 const person = {
     name: 'Jang',
-    age: 26
+    job: 'developer'
 };
 ```
-name과 age는 프로퍼티 키, 'Jang'과 26은 프로퍼티 값   
+name과 job은 프로퍼티 키, 'Jang'과 'developer'는 프로퍼티 값이다.   
 프로퍼티는 키와 값으로 이루어져 있다.   
    
 
@@ -35,17 +35,18 @@ const cat = {
 ```
   public class Person { // 클래스 정의
     private String name;
-    private int age;
+    private String job;
 
-    public Person(name, age) {
+    public Person(name, job) {
       this.name = name;
-      this.age = age;
+      this.job = job;
     }
   }
 
   ...
 
-  Person person = new Person("철수", 26); // 생성자호출
+  // 생성자 호출로 객체 생성
+  Person person = new Person("Jang", "developer"); 
 ```
 
 프로토타입 기반 객체지향 언어(자바스크립트)
@@ -53,7 +54,7 @@ const cat = {
   ```
   const person = {
     name: 'Jang',
-    age: 26
+    job: 'developer'
   };
   ```
 * Object 생성자 함수
@@ -62,10 +63,10 @@ const cat = {
 * 클래스(ES6)
 
 위에서 봤듯이 가장 간편한 생성 방법은 객체 리터럴이다.   
-나머지는 함수 이후 정리
+나머지는 함수 이후 정리!
 
 장점
-1. 클래스를 먼저 정의하고 생성자를 호출할 필요없이 리터럴로 객체 생성가능.
+1. 클래스를 먼저 정의하고 생성자를 호출할 필요없이 리터럴로 객체 생성가능
 2. 객체 생성 후 동적으로 프로퍼티 추가, 삭제 가능
 
 -----
@@ -78,15 +79,15 @@ const cat = {
 1. 식별자 네이밍 규칙을 따르지 않은 프로퍼티 키는 따옴표("",'')를 생략할 수 없다.
   ```
   const person = {
-    firstName: 'HL',
-    'last-name': 'Jang'
+    name: 'Jang',
+    'address-detail': 'XXX번지 XXX호'
   };
   ```
 2. 문자열로 프로퍼티 키를 동적 생성할 수 있다.
   ```
   const person = {};
-  const key = 'firstName';
-  person[key] = 'HL'; // ES5
+  const key = 'name';
+  person[key] = 'Jang'; // ES5
 
   const person2 = {[key]: 'ChulSu'}; // ES6
   ```
@@ -141,17 +142,17 @@ delete person.name;
 프로퍼티 값을 변수로 사용할 때 변수 이름과 프로퍼티 키가 동일한 이름일 때 프로퍼티 키 생략 가능
 ```
 const name = 'Jang';
-const age = 26;
+const job = 'developer';
 
 // ES5
 const person = {
     name: name,
-    age: age
+    job: job
 };
 
 // ES6
 const person2 = {
-  name, age
+  name, job
 };
 ```
 
