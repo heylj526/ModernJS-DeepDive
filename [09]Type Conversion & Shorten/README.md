@@ -35,7 +35,7 @@ undefined + '' // "undefined"
 ```javascript
 2 - '1'     // 1
 3 * '2'     // 6
-6 / 'three' // NaN
+6 / 'three' // NaN 
 
 +'100'      // 100
 +true       // 1
