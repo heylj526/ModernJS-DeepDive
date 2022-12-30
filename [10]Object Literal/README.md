@@ -3,7 +3,7 @@
 ## 객체
 > 자바스크립트를 구성하는 거의 모든 것이 객체. 원시값을 제외한 나머지(함수, 배열)
 
-```
+```javascript
 const person = {
     name: 'Jang',
     job: 'developer'
@@ -13,7 +13,7 @@ name과 job은 프로퍼티 키, 'Jang'과 'developer'는 프로퍼티 값이다
 프로퍼티는 키와 값으로 이루어져 있다.   
    
 
-```
+```javascript
 const cat = {
     age: 5,
     crying: function() {
@@ -32,7 +32,7 @@ const cat = {
 클래스 기반 객체지향 언어(C++, 자바)   
 1. 클래스 정의
 2. new 연산자로 생성자 호출
-```
+```java
   public class Person { // 클래스 정의
     private String name;
     private String job;
@@ -51,7 +51,7 @@ const cat = {
 
 프로토타입 기반 객체지향 언어(자바스크립트)
 * 객체 리터럴(중괄호{} 안에 프로퍼티 정의하는 방법)
-  ```
+  ```javascript
   const person = {
     name: 'Jang',
     job: 'developer'
@@ -77,14 +77,14 @@ const cat = {
 일반적으로 문자열을 사용하고, 반드시 식별자 네이밍 규칙을 따라야 하는 것은 아니지만 번거로운 일이 발생할 수 있으니 규칙을 따를 것을 권장한다.
 
 1. 식별자 네이밍 규칙을 따르지 않은 프로퍼티 키는 따옴표("",'')를 생략할 수 없다.
-  ```
+  ```javascript
   const person = {
     name: 'Jang',
     'address-detail': 'XXX번지 XXX호'
   };
   ```
 2. 문자열로 프로퍼티 키를 동적 생성할 수 있다.
-  ```
+  ```javascript
   const person = {};
   const key = 'name';
   person[key] = 'Jang'; // ES5
@@ -92,11 +92,11 @@ const cat = {
   const person2 = {[key]: 'ChulSu'}; // ES6
   ```
 3. 빈 문자열을 프로퍼티 키로 사용할 수 있지만 권장하지 않는다.
-  ```
+  ```javascript
   const obj = {'': 'empty'};
   ```
 4. 프로퍼티 키에 문자열이나 심벌값 이외의 값은 암묵적 타입 변환으로 문자열로 변환된다.
-  ```
+  ```javascript
   const obj = {0: 0};
   ```
 5. 프로퍼티 키를 예약어로 사용해도 에러가 발생하지는 않지만 권장하지 않는다.
@@ -113,7 +113,7 @@ const cat = {
 * 마침표 표기법
 * 대괄호 표기법
 
-```
+```javascript
 const person = {
   name: 'Jang'
 };
@@ -130,7 +130,7 @@ console.log(person['name']); // Jang
 
 ## 프로퍼티 삭제
 > delete 연산자로 프로퍼티 값을 삭제한다.
-```
+```javascript
 const person = {
   name: 'Jang'
 };
@@ -140,7 +140,7 @@ delete person.name;
 ## ES6에 추가된 객체 리터럴 기능
 1. 프로퍼티 축약 표현   
 프로퍼티 값을 변수로 사용할 때 변수 이름과 프로퍼티 키가 동일한 이름일 때 프로퍼티 키 생략 가능
-```
+```javascript
 const name = 'Jang';
 const job = 'developer';
 
@@ -157,7 +157,7 @@ const person2 = {
 ```
 
 2. 계산된 프로퍼티 이름
-```
+```javascript
 const obj = {};
 let i = 0;
 
@@ -177,7 +177,7 @@ const obj2 = {
 ```
 
 3. 메서드 축약 표현
-```
+```javascript
 const cat = {
     age: 5,
     crying: function() { // ES5
@@ -193,4 +193,4 @@ const dog = {
 };
 
 ```
-메서드 축약 표현으로 정의한 메서드는 프로퍼티에 할당한 함수와 다르게 동작한다. 이후 ***메서드*** 파트에서 알아보자.
+💡 메서드 축약 표현으로 정의한 메서드는 프로퍼티에 할당한 함수와 다르게 동작한다. 이후 ***메서드*** 파트에서 알아보자.
